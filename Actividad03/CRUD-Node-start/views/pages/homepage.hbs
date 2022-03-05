@@ -1,0 +1,15 @@
+<!-- views/pages/homepage.js -->
+<h1>Hello MVC</h1>
+<p>This is my first page</p>
+
+<a href="/about">Learn about us</a>
+
+<ul>
+  {{#each products}}
+    <li>{{this.name}}</li>
+  {{/each}}
+</ul>
+
+<br>
+
+<a herf= "../products/create.hbs"> Add new product /products/create </a>
