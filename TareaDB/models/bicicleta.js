@@ -2,7 +2,8 @@
 // Obtiene la conexión con la base de datos
 const knex = require('../database/connection');
 
-knex('bicicletas').select('*').then(function(projectNames){
+
+//knex('bicicletas').select('*').then(function(projectNames){
     //do something here
 
     /*
@@ -17,16 +18,13 @@ knex('bicicletas').select('*').then(function(projectNames){
     console.log(projectNames[0].lat);*/
 
     //Añadir un par de bicis:
-    let b1 = new Bicicleta(projectNames[0].id, projectNames[0].color, projectNames[0].modelo, [projectNames[0].lat, projectNames[0].lon])
-    let b2 = new Bicicleta(projectNames[1].id, projectNames[1].color, projectNames[1].modelo, [projectNames[1].lat, projectNames[1].lon])
+    //let b1 = new Bicicleta(projectNames[0].id, projectNames[0].color, projectNames[0].modelo, [projectNames[0].lat, projectNames[0].lon])
+    //let b2 = new Bicicleta(projectNames[1].id, projectNames[1].color, projectNames[1].modelo, [projectNames[1].lat, projectNames[1].lon])
 
-    Bicicleta.add(b1)
-    Bicicleta.add(b2)
+    //Bicicleta.add(b1)
+    //Bicicleta.add(b2)
 
-});
-
-
-
+//});
 
 let Bicicleta = function(id, color, modelo, ubicacion){
     this.id = id
@@ -35,38 +33,12 @@ let Bicicleta = function(id, color, modelo, ubicacion){
     this.ubicacion = ubicacion
 }
 
-Bicicleta.create = function(bici){
-
-    console.log("CREATE_id:"+bici.id+"------------------------------");
-
-    return knex('bicicletas')
-      .insert({
-        id: bici.id,
-        modelo: bici.modelo,
-        color: bici.color,
-        lat: bici.lat,
-        lon: bici.lon
-      });
-  }
-
-Bicicleta.delete = function(id){
-
-console.log("Delete_id:"+id+"------------------------------");
-
-return knex('bicicletas')
-    .delete()
-    .where('id', id);
-
-}
-
-Bicicleta.update = function(bici){
-
-    console.log("Update_id:"+bici.id+"------------------------------");
-    
-    knex('bicicletas')
-    .where({ id: bici.id })
-    .update({color: bici.color, modelo: bici.modelo, lon: bici.lon, lat: bici.lat})
-}
+Bicicleta.update = (id, aBici) => {
+return knex("bicicletas")
+    .update(aBici)
+    .update("updated_at", knex.fn.now())
+    .where("id", id);
+};
 
 Bicicleta.prototype.toString = function(){
     return `Id: ${this.id}, color: ${this.color}`
@@ -74,9 +46,17 @@ Bicicleta.prototype.toString = function(){
 
 Bicicleta.allBicis = []
 
-Bicicleta.add = function(aBici){
+Bicicleta.add = function (aBici) {
+
     Bicicleta.allBicis.push(aBici)
-}
+
+    return knex("bicicletas").insert({
+        color: aBici.color,
+        modelo: aBici.modelo,
+        lat: aBici.lat,
+        lon: aBici.lon,
+    });
+};
 
 //Añadir un par de bicis:
 //let b1 = new Bicicleta(1, 'rojo', 'bmx', [19.284770943610578, -99.13729060406136])
@@ -89,11 +69,13 @@ Bicicleta.add = function(aBici){
 Bicicleta.findById = function(aBiciId){
     let aBici = Bicicleta.allBicis.find(x => x.id == aBiciId)
     if(aBici){
-        return aBici
+        //return aBici
     }
     else{
-        throw new Error(`No existe una bici con el id: ${aBiciId}`)
+        //throw new Error(`No existe una bici con el id: ${aBiciId}`)
     }
+
+    return knex.select("*").from("bicicletas").where("id", aBiciId).first();
 }
 
 Bicicleta.removeById = function(aBiciId){
@@ -104,6 +86,8 @@ Bicicleta.removeById = function(aBiciId){
             break
         }
     }
+
+    return knex("bicicletas").delete().where("id", aBiciId);
 }
 
 module.exports = Bicicleta

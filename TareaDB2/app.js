@@ -1,35 +1,16 @@
-
-
-//
-//mysql -u root -p
-
-//Do an npm install for installing all the project dependencies
-//Do an npm install -g nodemon for installing all the project dependencies
-//Then npm start OR node app.js OR nodemon app.js to get the app running on local host
-
-//use nodemon app.js ( nodemon is a utility that will monitor for any changes in your source and automatically restart your server)
-
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-let biciRouter = require('./routes/bicicletas')
+var bicicletasRouter = require('./routes/bicicletas');
+var bicicletasAPIRouter = require('./routes/api/bicicletas');
 
 var app = express();
-
-// Importa la configuración de la app
-let appConfig = require('./configs/app');
-
-// Comienza el servidor en el puerto 3000 de localhost
-// para ver el sistema
-app.listen(appConfig.express_port,() => {
-  let show = 'App listening on port ' + appConfig.express_port + '! (http://localhost:' + appConfig.express_port +')';
-  console.log(show);
-});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,7 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/bicicletas', biciRouter);
+app.use('/bicicletas', bicicletasRouter);
+app.use('/api/bicicletas', bicicletasAPIRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
