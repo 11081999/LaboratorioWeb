@@ -41,6 +41,7 @@ Bicicleta.create = function(bici){
 
     return knex('bicicletas')
       .insert({
+        id: bici.id,
         modelo: bici.modelo,
         color: bici.color,
         lat: bici.lat,
@@ -55,6 +56,7 @@ console.log("Delete_id:"+id+"------------------------------");
 return knex('bicicletas')
     .delete()
     .where('id', id);
+
 }
 
 Bicicleta.update = function(bici){
