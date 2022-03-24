@@ -1,5 +1,30 @@
-const knex = require("../database/connection");
+// models/Product.js
+// Obtiene la conexión con la base de datos
+const knex = require('../database/connection');
 
+
+//knex('bicicletas').select('*').then(function(projectNames){
+    //do something here
+
+    /*
+    console.log(projectNames);
+    console.log("------------------------------");
+    console.log(projectNames[0]);
+    console.log("------------------------------");
+    console.log(projectNames[0].id);
+    console.log(projectNames[0].color);
+    console.log(projectNames[0].modelo);
+    console.log(projectNames[0].lon);
+    console.log(projectNames[0].lat);*/
+
+    //Añadir un par de bicis:
+    //let b1 = new Bicicleta(projectNames[0].id, projectNames[0].color, projectNames[0].modelo, [projectNames[0].lat, projectNames[0].lon])
+    //let b2 = new Bicicleta(projectNames[1].id, projectNames[1].color, projectNames[1].modelo, [projectNames[1].lat, projectNames[1].lon])
+
+    //Bicicleta.add(b1)
+    //Bicicleta.add(b2)
+
+//});
 let Bicicleta = function (color, modelo, lat, lon) {
   this.color = color;
   this.modelo = modelo;

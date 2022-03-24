@@ -9,21 +9,9 @@ exports.seed = function (knex) {
     .del()
     .then(function () {
       // Inserts seed entries
-      return knex("bicicletas").insert([
-        {
-          id: "1",
-          color: "rojo",
-          modelo: "bmx",
-          lat: 19.284771,
-          lon: -99.137291,
-        },
-        {
-          id: "2",
-          color: "blanca",
-          modelo: "Benotto",
-          lat: 19.286055,
-          lon: -99.136991,
-        },
+      return knex('bicicletas').insert([
+        { id: 1, color: 'rojo', modelo: 'bmx', lon: 19.284770943610578, lat: 2.010101 },
+        { id: 2, color: 'blanca', modelo: 'Benotto', lon: 1.010101, lat: 2.010101 },
       ]);
     });
 };

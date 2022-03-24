@@ -1,3 +1,13 @@
+//
+//mysql -u root -p
+
+//Do an npm install for installing all the project dependencies
+//Do an npm install -g nodemon for installing all the project dependencies
+//Then npm start OR node app.js OR nodemon app.js to get the app running on local host
+
+//use nodemon app.js ( nodemon is a utility that will monitor for any changes in your source and automatically restart your server)
+
+
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
