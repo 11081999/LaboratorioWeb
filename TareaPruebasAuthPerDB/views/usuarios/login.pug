@@ -1,0 +1,25 @@
+
+doctype html
+html(lang="en")
+  head
+    title Login
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body#main
+    br
+    a.btn.btn-success(href='/usuarios') Regresar
+    br
+    br
+    form(action='/usuarios/login' method='POST')
+      div.label login form
+
+      div
+      input#email(type="text" name="email" placeholder="email" value="rob@rrob.com")
+
+      div
+      input#password(type="password" name="password" placeholder="password" value="123")
+
+      input.btn(type='submit' value='LOGIN')
+      p
+      | not a member? 
+      a(href="/usuarios/create") Sing Up now
