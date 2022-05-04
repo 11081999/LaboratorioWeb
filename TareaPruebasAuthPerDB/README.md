@@ -14,14 +14,14 @@ Segundo comando:
 
 ## 1. Test unitarios.
 
-Se crearon 8 test unitarios con mocha ubcados en la capeta de spec:
+Se crearon 8 test unitarios con mocha ubcados en la capeta de spec:\
  - Archivo de pruebas: mocha_bicicleta_api.spec.js
     Pruebas: Obtener el listado de bicicletas, agregar una bicicleta.
 
- -  Archivo de pruebas: mocha_bicicleta_test.spec.js
+ -  Archivo de pruebas: mocha_bicicleta_test.spec.js\
     Pruebas: Crear una bicicleta, listar todas las bicicletas, añadir bicicleta, encontrar bici por código, eliminar bicicleta.
  
- - Archivo de pruebas: mocha_usuario_test.spec.js
+ - Archivo de pruebas: mocha_usuario_test.spec.js\
     Pruebas: Que un usuario reserve una bicicleta.
 
 
