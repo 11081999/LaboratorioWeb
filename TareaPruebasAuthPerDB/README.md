@@ -10,12 +10,13 @@ Primer comando:
 
 Segundo comando:
 
-    npm run devstarts
+    npm run devstart
 
 ## 1. Test unitarios.
 
-Se crearon 8 test unitarios con mocha ubcados en la capeta de spec:\
- - Archivo de pruebas: mocha_bicicleta_api.spec.js
+Se crearon 8 test unitarios con mocha ubcados en la capeta de spec:
+
+ - Archivo de pruebas: mocha_bicicleta_api.spec.js\
     Pruebas: Obtener el listado de bicicletas, agregar una bicicleta.
 
  -  Archivo de pruebas: mocha_bicicleta_test.spec.js\
@@ -24,11 +25,16 @@ Se crearon 8 test unitarios con mocha ubcados en la capeta de spec:\
  - Archivo de pruebas: mocha_usuario_test.spec.js\
     Pruebas: Que un usuario reserve una bicicleta.
 
+    Las pruebas se pueden realizar y verificar con el siguiente comando:
 
-## 2. Autenticación.
+    npm mochatest ""
 
-A step by step series of examples that tell you how to get a development
-environment running
+
+## 2. Autenticación con verificación.
+
+1. Se debe de crear un usuario en la [Pagina de Registro](https://www.example.com) o bien accediendo desde index >.
+
+2. Ir a la [Pagina de Login](https://www.example.com) o bien accediendo desde index >
 
 
 ## 3. Persistencia en MongoDB.
