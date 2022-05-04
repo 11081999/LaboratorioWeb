@@ -13,6 +13,7 @@ var usersRouter = require('./routes/users');
 let biciRouter = require('./routes/bicicletas')
 let biciRouterAPI = require('./routes/api/bicicletas')
 let usuariosAPIRouter = require('./routes/api/usuarios')
+let reservasRouter = require("./routes/reservas");
 
 let usuariosRouter = require('./routes/usuarios')
 let tokenRouter = require('./routes/token')
@@ -64,7 +65,7 @@ app.use('/api/bicicletas', biciRouterAPI);
 app.use('/api/usuarios', usuariosAPIRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/token', tokenRouter);
-
+app.use("/reservas", reservasRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
