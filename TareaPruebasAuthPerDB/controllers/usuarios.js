@@ -82,6 +82,7 @@ module.exports = {
             res.json({ error: "Invalid Password" });
           }
         } else {
+            //igual y podemos solo refrescar la pagina.
           res.json({ error: "No existe un user con ese email" });
         }
       },
