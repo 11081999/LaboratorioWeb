@@ -12,6 +12,8 @@ Segundo comando:
 
     npm run devstart
 
+NOTA: Es importante tener el servicio de MongoDB corriendo con un esquema llamado "red_bicicletas".
+
 ## 1. Test unitarios.
 
 Se crearon 8 test unitarios con mocha ubcados en la capeta de spec:
@@ -27,20 +29,24 @@ Se crearon 8 test unitarios con mocha ubcados en la capeta de spec:
 
     Las pruebas se pueden realizar y verificar con el siguiente comando:
 
-    npm mochatest ""
+        npm mochatest ""
 
 
 ## 2. Autenticación con verificación.
 
-1. Se debe de crear un usuario en la [Pagina de Registro](https://www.example.com) o bien accediendo desde index >.
+1. Se debe de crear un usuario en la [Pagina de Registro](http://localhost:3000/usuarios/create) o bien accediendo desde index > usuarios > create.
 
-2. Ir a la [Pagina de Login](https://www.example.com) o bien accediendo desde index >
+2. La verificación se reliza activando un link que se envia por correo a una cuenta de  Ethereal Email. 
 
+3. Ir a la [Pagina de Login](https://www.example.com) o bien accediendo desde index > usuarios > Login.
+
+NOTA: Solo los usuarios verificados pueden hacer login, en el caso exitoso el sistema rediccionará a la pagina de usuarios. De lo contrario el sistema arroja un mensaje de error.
 
 ## 3. Persistencia en MongoDB.
 
-A step by step series of examples that tell you how to get a development
-environment running
+- Los usuarios, las bicicletas y las reservaciones persisten en una instancia de MongoDB.
+
+- Se pueden ver las reservaciones en la [Pagina de Reservas](http://localhost:3000/reservas/) o bien accediendo desde index > reservas. 
 
 
 
