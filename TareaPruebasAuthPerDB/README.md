@@ -29,7 +29,7 @@ Se crearon 8 test unitarios con mocha ubicados en la carpeta de spec:
  
     Las pruebas se pueden realizar y verificar con el siguiente comando:
  
-        npm mochatest ""
+        npm mochatest spec/models/mocha_usuario_test.spec.js
  
  
 ## 2. Autenticación con verificación.
