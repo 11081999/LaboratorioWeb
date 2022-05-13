@@ -2,6 +2,7 @@ import React from 'react'
 
 import Star from "../img/star.svg"
 import Heart from "../img/heart.svg"
+
 class Cards extends React.Component {
   render(){
     return     <section class="cards">
